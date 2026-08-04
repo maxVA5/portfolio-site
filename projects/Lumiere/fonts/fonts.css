@@ -1,0 +1,17 @@
+@font-face {
+    font-family: "Ranade";
+    src: url("../assets/Ranade-Regular.otf") format("opentype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Ranade";
+    src: url("../assets/Ranade-Light.otf") format("opentype");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Boxing";
+    src: url("../assets/Boxing-Regular.otf") format("opentype");
+    font-weight: 400;
+}

@@ -1,0 +1,62 @@
+/* ==========================================================================
+   STYLE-GUIDE.CSS
+   Page-specific layout for style-guide.html (Colors, Type, Texture, Motion, Components).
+   Loaded after base.css.
+   ========================================================================== */
+
+/* ---------- hero ---------- */
+#hero{ min-height:70svh; display:flex; align-items:center; overflow:hidden; }
+.hero-inner{ position:relative; z-index:2; padding:8rem 6vw 5rem; width:100%; }
+.hero-inner .cover-role{
+  font-family:'Space Mono', monospace; letter-spacing:.2em; text-transform:uppercase;
+  color:var(--moss); font-size:.85rem; margin-bottom:1.2rem;
+}
+.hero-inner h1{ font-size:clamp(2.6rem, 8vw, 5.5rem); }
+.hero-inner p{ max-width:56ch; margin-top:1.4rem; color:var(--paper-dim); font-size:1.05rem; }
+
+/* ---------- swatches ---------- */
+.swatch-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:1.6rem; }
+.swatch{ border:var(--cutout-border); box-shadow:var(--cutout-shadow); background:var(--paper); overflow:hidden; }
+.swatch-color{ height:110px; }
+.swatch-info{ padding:1rem 1.1rem; color:var(--ink); background:var(--paper); }
+.swatch-info .name{ font-family:'Space Mono', monospace; font-weight:700; text-transform:uppercase; font-size:.8rem; letter-spacing:.05em; }
+.swatch-info .hex{ font-family:'Space Mono', monospace; font-size:.85rem; color:var(--signal); margin-top:.2rem; }
+.swatch-info .use{ font-size:.82rem; margin-top:.5rem; color:#333; }
+
+/* ---------- type specimens ---------- */
+.type-block{ margin-bottom:3rem; padding-bottom:2.6rem; border-bottom:2px dashed rgba(255,255,255,.15); }
+.on-paper .type-block{ border-bottom:2px dashed rgba(0,0,0,.15); }
+.type-block:last-child{ border-bottom:none; }
+.type-label{ display:flex; align-items:center; gap:1rem; margin-bottom:1rem; }
+.type-tag{ font-family:'Space Mono', monospace; font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; }
+.anton-spec{ font-family:'Anton', sans-serif; text-transform:uppercase; }
+.mono-spec{ font-family:'Space Mono', monospace; }
+.work-spec{ font-family:'Work Sans', sans-serif; }
+
+/* ---------- component demo cards ---------- */
+.demo-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:2.2rem; margin-top:1rem; }
+.demo-card{ background:var(--paper); color:var(--ink); border:var(--cutout-border); box-shadow:var(--cutout-shadow); padding:2rem 1.6rem; text-align:center; position:relative; }
+.demo-card .demo-label{ font-family:'Space Mono', monospace; font-size:.75rem; text-transform:uppercase; letter-spacing:.08em; color:var(--signal); margin-top:1.4rem; display:block; }
+.demo-card .demo-note{ font-size:.8rem; color:#444; margin-top:.4rem; }
+.demo-stage{ min-height:90px; display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:.8rem; }
+
+.stamp-badge-demo{ width:130px; height:130px; animation:spin 32s linear infinite; }
+@media (prefers-reduced-motion: reduce){ .stamp-badge-demo{ animation:none; } }
+
+.float-demo{ animation:float 1.8s ease-in-out infinite; font-size:1.6rem; }
+@media (prefers-reduced-motion: reduce){ .float-demo{ animation:none; } }
+
+.torn-demo{ position:relative; height:80px; background:var(--ink); }
+.torn-demo .torn-edge{ bottom:-1px; }
+
+code.token{
+  display:block; font-family:'Space Mono', monospace; font-size:.78rem;
+  background:rgba(0,0,0,.06); padding:.9rem 1rem; margin-top:1rem; text-align:left;
+  white-space:pre-wrap; color:#222;
+}
+.on-ink code.token{ background:rgba(255,255,255,.08); color:var(--paper-dim); }
+
+/* ---------- page-specific responsive ---------- */
+@media (max-width:700px){
+  .wrap{ padding:5.5rem 6vw; }
+}

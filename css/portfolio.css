@@ -1,0 +1,142 @@
+/* ==========================================================================
+   PORTFOLIO.CSS
+   Page-specific layout for index.html (Cover, Profile, Skills, Projects, Contact).
+   Loaded after base.css.
+   ========================================================================== */
+
+/* ---------- COVER ---------- */
+#cover{ min-height:100svh; display:flex; align-items:center; overflow:hidden; }
+.cover-inner{ position:relative; z-index:2; padding:8rem 6vw 6rem; width:100%; }
+.cover-role{
+  font-family:'Space Mono', monospace; letter-spacing:.2em; text-transform:uppercase;
+  color:var(--moss); font-size:.85rem; margin-bottom:1.2rem;
+}
+.cover-name{ font-size:clamp(3.2rem, 11vw, 8.5rem); color:var(--paper); }
+.cover-name .accent{ color:var(--signal); }
+.cover-sub{ max-width:34ch; margin-top:1.6rem; font-size:1.05rem; color:var(--paper-dim); }
+
+.stamp-badge{
+  position:absolute; right:6vw; top:7rem; width:150px; height:150px;
+  animation:spin 32s linear infinite;
+}
+@media (prefers-reduced-motion: reduce){ .stamp-badge{ animation:none; } }
+
+.scroll-cue{
+  position:absolute; left:6vw; bottom:4.5rem; z-index:3;
+  display:flex; align-items:center; gap:.8rem;
+  font-family:'Space Mono', monospace; font-size:.78rem; letter-spacing:.1em;
+  color:var(--paper-dim); text-transform:uppercase;
+}
+.scroll-cue .arrow{ animation:float 1.8s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce){ .scroll-cue .arrow{ animation:none; } }
+
+.cover-tape1{ top:14%; left:8%; transform:rotate(-14deg); }
+.cover-tape2{ bottom:22%; left:38%; transform:rotate(9deg); }
+
+/* ---------- ABOUT ---------- */
+.about-grid{ display:grid; grid-template-columns:.85fr 1.15fr; gap:4.5rem; align-items:start; }
+.portrait-frame{
+  position:relative; background:var(--paper); border:var(--cutout-border);
+  box-shadow:var(--cutout-shadow); padding:1rem 1rem 2.2rem; transform:rotate(-2deg);
+}
+.portrait-frame figcaption{
+  font-family:'Space Mono', monospace; font-size:.75rem; font-style:italic;
+  margin-top:.8rem; color:#333; text-align:center;
+}
+.about-bio p{ margin-bottom:1.1rem; max-width:58ch; }
+.fact-stamps{ display:flex; flex-wrap:wrap; gap:.9rem; margin-top:2.2rem; }
+.fact-stamps .sticker:nth-child(1){ background:var(--butter); transform:rotate(-2deg); }
+.fact-stamps .sticker:nth-child(2){ background:var(--moss); transform:rotate(1.5deg); }
+.fact-stamps .sticker:nth-child(3){ background:var(--paper); transform:rotate(-1deg); }
+.fact-stamps .sticker:nth-child(4){ background:var(--butter); transform:rotate(2deg); }
+
+/* ---------- SKILLS ---------- */
+.skills-groups{ display:grid; grid-template-columns:1fr 1fr; gap:3rem; }
+.skill-group h3{
+  font-family:'Space Mono', monospace; text-transform:uppercase; font-size:.85rem;
+  letter-spacing:.15em; color:var(--butter); margin-bottom:1.2rem; font-weight:700;
+}
+.skill-tags{ display:flex; flex-wrap:wrap; gap:.7rem; }
+.skill-tags .sticker:nth-child(3n+1){ background:var(--moss); transform:rotate(-2deg); }
+.skill-tags .sticker:nth-child(3n+2){ background:var(--butter); transform:rotate(1.5deg); }
+.skill-tags .sticker:nth-child(3n+3){ background:var(--paper); transform:rotate(-1deg); }
+
+/* ---------- PROJECTS ---------- */
+.project-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:2.6rem; }
+.project-card{
+  position:relative; background:var(--paper); border:var(--cutout-border);
+  box-shadow:var(--cutout-shadow); padding:1.6rem; transition:transform .18s ease, box-shadow .18s ease;
+}
+.project-card:nth-child(odd){ transform:rotate(-1.4deg); }
+.project-card:nth-child(even){ transform:rotate(1.4deg); }
+.project-card:hover{ transform:translateY(-6px) rotate(0deg); box-shadow:11px 11px 0 var(--ink); }
+.project-thumb{
+  height:150px; margin-bottom:1.1rem; position:relative; overflow:hidden;
+  border:2px solid var(--ink);
+  background-image:radial-gradient(var(--ink) 1.1px, transparent 1.4px);
+  background-size:10px 10px;
+}
+.project-cat{
+  font-family:'Space Mono', monospace; font-size:.7rem; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--signal); font-weight:700; display:block; margin-bottom:.5rem;
+}
+.project-card h3{ font-size:1.35rem; margin-bottom:.6rem; }
+.project-card p{ font-size:.92rem; color:#2a2a2a; }
+
+/* ---------- CONTACT (mirrors cover) ---------- */
+#contact{ padding-top:1px; overflow:hidden; }
+.contact-inner{ text-align:left; }
+.contact-headline{ font-size:clamp(2.6rem, 8vw, 6rem); margin-bottom:1.4rem; }
+.contact-sub{ max-width:48ch; color:var(--paper-dim); margin-bottom:2.4rem; font-size:1.05rem; }
+.contact-details{
+  display:flex; flex-wrap:wrap; gap:1rem; margin-top:2.6rem; list-style:none;
+  font-family:'Space Mono', monospace; font-size:.85rem;
+}
+.contact-details li{ border:2px solid var(--paper-dim); padding:.7em 1.1em; letter-spacing:.03em; }
+.contact-details a{ text-decoration:none; }
+.contact-details a:hover{ color:var(--moss); }
+
+/* ---------- page-specific responsive ---------- */
+@media (max-width:900px){
+  .about-grid{ grid-template-columns:1fr; gap:3rem; }
+  .portrait-frame{ max-width:320px; margin:0 auto; }
+  .skills-groups{ grid-template-columns:1fr; gap:2.4rem; }
+  .project-grid{ grid-template-columns:1fr 1fr; }
+  .stamp-badge{ width:110px; height:110px; top:5.5rem; right:5vw; }
+}
+@media (max-width:600px){
+  .project-grid{ grid-template-columns:1fr; }
+  .cover-inner{ padding-top:7rem; }
+  .stamp-badge{ display:none; }
+  .footer-strip{ flex-direction:column; align-items:flex-start; }
+}
+
+.project-link{
+  display:block;
+  text-decoration:none;
+  color:inherit;
+}
+
+.project-link:hover{
+  color:inherit;
+}
+
+.profile-photo{
+  width:100%;
+  display:block;
+  aspect-ratio:4/5;
+  object-fit:cover;
+}
+
+.logo-stamp{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.logo-stamp img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+}

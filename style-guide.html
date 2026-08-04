@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Style Guide — Nico Alvarez Portfolio System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/style-guide.css">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<svg class="torn-sprite" aria-hidden="true">
+  <defs>
+    <polygon id="tornPath" points="0,44 0,20 32,30 64,8 96,26 128,4 160,28 192,10 224,32 256,6 288,26 320,16 352,34 384,8 416,28 448,4 480,24 512,12 544,32 576,6 608,26 640,10 672,30 704,4 736,24 768,14 800,34 832,8 864,28 896,4 928,24 960,10 992,30 1024,6 1056,26 1088,12 1120,32 1152,8 1184,24 1200,20 1200,44"/>
+  </defs>
+</svg>
+
+<nav>
+  <div class="logo-stamp">S·G</div>
+  <ul class="nav-links">
+    <li><a href="#colors">Colors</a></li>
+    <li><a href="#type">Type</a></li>
+    <li><a href="#texture">Texture</a></li>
+    <li><a href="#motion">Motion</a></li>
+    <li><a href="#components">Components</a></li>
+  </ul>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section id="hero" class="on-ink">
+  <div class="halftone on-ink-tex"></div>
+  <div class="tape" style="top:16%; left:8%; transform:rotate(-14deg);"></div>
+  <div class="hero-inner">
+    <div class="cover-role">Design System Reference</div>
+    <h1>Style Guide</h1>
+    <p>Every color, font, texture, animation, and component used across the Nico Alvarez portfolio — live, not screenshotted. Copy the values, reuse the classes, keep the system consistent.</p>
+  </div>
+  <div class="torn-edge to-paper"><svg viewBox="0 0 1200 44" preserveAspectRatio="none"><use href="#tornPath" fill="currentColor"/></svg></div>
+</section>
+
+<!-- ============ COLORS ============ -->
+<section id="colors" class="on-paper">
+  <div class="halftone on-paper-tex"></div>
+  <div class="wrap">
+    <div class="eyebrow">01 — Palette</div>
+    <h2 style="font-size:clamp(1.8rem,4vw,2.6rem); margin-bottom:2.2rem;">Five colors, one rule</h2>
+    <p style="max-width:60ch; margin-bottom:2.4rem; color:#333;">Colored chips (moss, butter, red) always pair with black text. Black sections use paper/moss text. Paper sections use black/red text — moss is never used as small text on paper, since it fails contrast there.</p>
+
+    <div class="swatch-grid">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#000000;"></div>
+        <div class="swatch-info"><div class="name">Ink Black</div><div class="hex">#000000</div><div class="use">Base background, primary text, borders, shadows</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#8DB355;"></div>
+        <div class="swatch-info"><div class="name">Moss</div><div class="hex">#8DB355</div><div class="use">Labels on black, sticker chips, accent shapes</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#FFEA93;"></div>
+        <div class="swatch-info"><div class="name">Butter</div><div class="hex">#FFEA93</div><div class="use">Highlight marker on black sections, tape, CTA hover</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#D90000;"></div>
+        <div class="swatch-info"><div class="name">Signal</div><div class="hex">#D90000</div><div class="use">CTA button, stamps, the "red thread" accent</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#F4EFE1;"></div>
+        <div class="swatch-info"><div class="name">Paper</div><div class="hex">#F4EFE1</div><div class="use">Neutral light section background, card faces</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#e9e1cb;"></div>
+        <div class="swatch-info"><div class="name">Paper Dim</div><div class="hex">#e9e1cb</div><div class="use">Secondary text on black sections</div></div>
+      </div>
+    </div>
+
+    <code class="token">:root{
+  --ink:#000000;
+  --moss:#8DB355;
+  --butter:#FFEA93;
+  --signal:#D90000;
+  --paper:#F4EFE1;
+  --paper-dim:#e9e1cb;
+}</code>
+  </div>
+  <div class="torn-edge to-ink"><svg viewBox="0 0 1200 44" preserveAspectRatio="none"><use href="#tornPath" fill="currentColor"/></svg></div>
+</section>
+
+<!-- ============ TYPE ============ -->
+<section id="type" class="on-ink">
+  <div class="halftone on-ink-tex"></div>
+  <div class="wrap">
+    <div class="eyebrow">02 — Typography</div>
+    <h2 style="font-size:clamp(1.8rem,4vw,2.6rem); margin-bottom:2.6rem;">Three fonts, three jobs</h2>
+
+    <div class="type-block">
+      <div class="type-label"><span class="type-tag" style="color:var(--moss);">Display — headlines</span></div>
+      <div class="anton-spec" style="font-size:clamp(2.2rem,6vw,4.2rem);">Anton</div>
+      <p style="color:var(--paper-dim); margin-top:.6rem; font-size:.9rem;">Google Font · weight 400 only · always uppercase · used for h1/h2/h3</p>
+    </div>
+
+    <div class="type-block">
+      <div class="type-label"><span class="type-tag" style="color:var(--moss);">Labels — eyebrows, stickers, captions</span></div>
+      <div class="mono-spec" style="font-size:1.6rem;">Space Mono <span style="font-weight:700;">Bold</span></div>
+      <p style="color:var(--paper-dim); margin-top:.6rem; font-size:.9rem;">Google Font · weights 400 &amp; 700 · used for nav, eyebrows, stickers, stamp text, footer</p>
+    </div>
+
+    <div class="type-block">
+      <div class="type-label"><span class="type-tag" style="color:var(--moss);">Body — paragraphs</span></div>
+      <div class="work-spec" style="font-size:1.2rem;">Work Sans — the quick brown fox jumps over the lazy dog.</div>
+      <p style="color:var(--paper-dim); margin-top:.6rem; font-size:.9rem;">Google Font · weights 400–800 · default body font for all running text</p>
+    </div>
+
+    <code class="token">font-family:'Anton', sans-serif;       /* headlines */
+font-family:'Space Mono', monospace;   /* labels/captions */
+font-family:'Work Sans', sans-serif;   /* body */</code>
+  </div>
+  <div class="torn-edge to-paper"><svg viewBox="0 0 1200 44" preserveAspectRatio="none"><use href="#tornPath" fill="currentColor"/></svg></div>
+</section>
+
+<!-- ============ TEXTURE ============ -->
+<section id="texture" class="on-paper">
+  <div class="halftone on-paper-tex"></div>
+  <div class="wrap">
+    <div class="eyebrow">03 — Texture &amp; Background</div>
+    <h2 style="font-size:clamp(1.8rem,4vw,2.6rem); margin-bottom:2.2rem;">Reused, not one-off</h2>
+
+    <div class="demo-grid">
+      <div class="demo-card">
+        <div class="demo-stage" style="background:#000; position:relative; height:110px;">
+          <div class="halftone on-ink-tex" style="position:absolute;"></div>
+        </div>
+        <span class="demo-label">Halftone · on-ink-tex</span>
+        <p class="demo-note">Moss dots, 14% opacity, 16px grid — used on all black sections</p>
+      </div>
+
+      <div class="demo-card">
+        <div class="demo-stage" style="background:#F4EFE1; position:relative; height:110px; border:1px solid rgba(0,0,0,.15);">
+          <div class="halftone on-paper-tex" style="position:absolute;"></div>
+        </div>
+        <span class="demo-label">Halftone · on-paper-tex</span>
+        <p class="demo-note">Ink dots, 6% opacity, 16px grid — used on all paper sections</p>
+      </div>
+
+      <div class="demo-card">
+        <div class="demo-stage torn-demo">
+          <div class="torn-edge to-paper"><svg viewBox="0 0 1200 44" preserveAspectRatio="none"><use href="#tornPath" fill="currentColor"/></svg></div>
+        </div>
+        <span class="demo-label">Torn paper edge</span>
+        <p class="demo-note">One polygon, reused via &lt;use&gt;, recolored per section seam</p>
+      </div>
+
+      <div class="demo-card">
+        <div class="demo-stage" style="position:relative; height:110px; background:#8DB355;">
+          <div class="grain" style="position:absolute;"></div>
+        </div>
+        <span class="demo-label">Grain overlay</span>
+        <p class="demo-note">Fixed, full-page SVG feTurbulence noise, 5% opacity, overlay blend — sits above everything, site-wide</p>
+      </div>
+    </div>
+  </div>
+  <div class="torn-edge to-ink"><svg viewBox="0 0 1200 44" preserveAspectRatio="none"><use href="#tornPath" fill="currentColor"/></svg></div>
+</section>
+
+<!-- ============ MOTION ============ -->
+<section id="motion" class="on-ink">
+  <div class="halftone on-ink-tex"></div>
+  <div class="wrap">
+    <div class="eyebrow">04 — Motion</div>
+    <h2 style="font-size:clamp(1.8rem,4vw,2.6rem); margin-bottom:.6rem;">Six animations, all optional</h2>
+    <p style="color:var(--paper-dim); max-width:60ch; margin-bottom:2.2rem;">Every animation below is wrapped in <code>prefers-reduced-motion</code> and turns off for anyone who's asked for less motion.</p>
+
+    <div class="demo-grid">
+      <div class="demo-card">
+        <div class="demo-stage">
+          <svg class="stamp-badge-demo" viewBox="0 0 200 200" aria-hidden="true">
+            <defs><path id="circlePathDemo" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/></defs>
+            <circle cx="100" cy="100" r="94" fill="none" stroke="#000" stroke-width="1.5" stroke-dasharray="3 5"/>
+            <text font-family="Space Mono, monospace" font-size="10" letter-spacing="2" fill="#000">
+              <textPath href="#circlePathDemo">SPIN • 32S • LINEAR • INFINITE • </textPath>
+            </text>
+            <circle cx="100" cy="100" r="46" fill="#D90000"/>
+          </svg>
+        </div>
+        <span class="demo-label">@keyframes spin</span>
+        <p class="demo-note">32s linear infinite rotation — used on the stamp badges</p>
+      </div>
+
+      <div class="demo-card">
+        <div class="demo-stage"><span class="float-demo">↓</span></div>
+        <span class="demo-label">@keyframes float</span>
+        <p class="demo-note">1.8s ease-in-out, ±8px vertical bob — used on the scroll cue arrow</p>
+      </div>
+
+      <div class="demo-card">
+        <div class="demo-stage"><a class="btn">Hover Me →</a></div>
+        <span class="demo-label">Button hover transition</span>
+        <p class="demo-note">Lifts &amp; rotates -1deg, shadow grows 7px→10px, bg flips red→butter</p>
+      </div>
+
+      <div class="demo-card">
+        <div class="demo-stage"><span class="sticker" style="background:var(--moss); transform:rotate(-2deg);">Hover Me</span></div>
+        <span class="demo-label">Sticker hover transition</span>
+        <p class="demo-note">Un-rotates to 0deg, lifts 2px, shadow grows 4px→6px</p>
+      </div>
+    </div>
+  </div>
+  <div class="torn-edge to-paper"><svg viewBox="0 0 1200 44" preserveAspectRatio="none"><use href="#tornPath" fill="currentColor"/></svg></div>
+</section>
+
+<!-- ============ COMPONENTS ============ -->
+<section id="components" class="on-paper">
+  <div class="halftone on-paper-tex"></div>
+  <div class="wrap">
+    <div class="eyebrow">05 — Components</div>
+    <h2 style="font-size:clamp(1.8rem,4vw,2.6rem); margin-bottom:2.2rem;">The signature: paper-cutout system</h2>
+    <p style="max-width:60ch; margin-bottom:2.4rem; color:#333;">Every card, tag, and frame shares one language: black outline + hard offset shadow + slight rotation — like something taped down by hand. That repetition is what ties five different sections into one page.</p>
+
+    <div class="demo-grid">
+      <div class="demo-card">
+        <div class="demo-stage"><div class="cutout" style="padding:1.2rem 1.6rem; transform:rotate(-2deg);">.cutout</div></div>
+        <span class="demo-label">Base cutout</span>
+        <p class="demo-note">3px black border + 7px offset shadow — base for cards &amp; frames</p>
+      </div>
+
+      <div class="demo-card">
+        <div class="demo-stage"><span class="sticker" style="background:var(--butter); transform:rotate(2deg);">.sticker</span></div>
+        <span class="demo-label">Sticker</span>
+        <p class="demo-note">Smaller cutout: 2px border, 4px shadow — tags &amp; fact-stamps</p>
+      </div>
+
+      <div class="demo-card">
+        <div class="demo-stage"><a class="btn">.btn</a></div>
+        <span class="demo-label">Button</span>
+        <p class="demo-note">Same cutout language, red default, butter on hover</p>
+      </div>
+
+      <div class="demo-card">
+        <div class="demo-stage" style="background:#000; border-radius:4px;"><span style="color:var(--paper); font-family:'Anton',sans-serif; font-size:1.4rem; text-transform:uppercase;">Look <mark>here</mark></span></div>
+        <span class="demo-label">&lt;mark&gt; highlight</span>
+        <p class="demo-note">Butter-on-black / moss-on-paper headline accent</p>
+      </div>
+
+      <div class="demo-card">
+        <div class="demo-stage" style="background:#000; height:100px; position:relative;">
+          <div class="tape" style="position:relative; top:auto; left:auto; transform:rotate(-6deg);"></div>
+        </div>
+        <span class="demo-label">.tape</span>
+        <p class="demo-note">Semi-transparent rotated rectangle — corner/accent decoration</p>
+      </div>
+
+      <div class="demo-card">
+        <div class="demo-stage" style="background:#000; height:100px;"><div class="logo-stamp">N·A</div></div>
+        <span class="demo-label">.logo-stamp</span>
+        <p class="demo-note">Nav monogram — dashed-circle badge, same stamp language</p>
+      </div>
+
+      <div class="demo-card">
+        <div class="demo-stage" style="background:#000; height:100px;">
+          <a class="back-top" href="#hero" style="position:relative;">↑ TOP</a>
+        </div>
+        <span class="demo-label">.back-top</span>
+        <p class="demo-note">Footer badge, links back to the top of the page</p>
+      </div>
+    </div>
+
+    <code class="token">.cutout{ border:3px solid #000; box-shadow:7px 7px 0 #000; }
+.sticker{ border:2px solid #000; box-shadow:4px 4px 0 #000; }
+/* hover states un-rotate + grow the shadow */</code>
+  </div>
+</section>
+
+<div class="footer-strip">
+  <span>© <span id="year"></span> Nico Alvarez — design system reference.</span>
+  <a href="#hero" class="back-top">↑ TOP</a>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

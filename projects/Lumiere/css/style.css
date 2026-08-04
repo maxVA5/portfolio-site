@@ -1,0 +1,1659 @@
+/* ==================================================
+   LUMIÈRE AESTHETICS & MEDSPA
+   QUIET LUXURY DESIGN SYSTEM
+   PART 1
+   RESET + VARIABLES + NAVBAR + HERO
+================================================== */
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+
+    --bg: #f8f5f1;
+    --surface: #ffffff;
+    --surface-2: #f3eee8;
+
+    --primary: #b08a6a;
+    --primary-dark: #8f6d52;
+
+    --text: #222222;
+    --text-light: #6f6f6f;
+
+    --border: rgba(0,0,0,0.08);
+
+    --shadow-sm: 0 10px 30px rgba(0,0,0,0.05);
+    --shadow-md: 0 20px 60px rgba(0,0,0,0.08);
+    --shadow-lg: 0 30px 80px rgba(0,0,0,0.12);
+
+    --radius-sm: 12px;
+    --radius-md: 20px;
+    --radius-lg: 32px;
+
+    --transition: all .4s ease;
+
+}
+
+/* =========================
+   FONT SETUP
+========================= */
+
+
+/* ==========================================
+   LOCAL FONTS
+========================================== */
+
+@font-face {
+    font-family: "Boxing";
+    src: url("../assets/Boxing-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Ranade";
+    src: url("../assets/Ranade-light.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Ranade";
+    src: url("../assets/Ranade-Medium.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Ranade", sans-serif;
+    font-weight:300;
+}
+
+h1,
+h2,
+.logo,
+.footer-logo,
+.hero-badge{
+    font-family:"Boxing", serif;
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+ul{
+    list-style:none;
+}
+
+button,
+input,
+select{
+    font-family:inherit;
+}
+
+/* =========================
+   GLOBAL
+========================= */
+
+.container{
+
+    width:min(1200px, 92%);
+    margin:auto;
+}
+
+.section{
+
+    padding:120px 0;
+}
+
+.section-header{
+
+    text-align:center;
+    max-width:800px;
+    margin:0 auto 70px;
+}
+
+.section-header span{
+
+    display:inline-block;
+
+    color:var(--primary);
+
+    letter-spacing:2px;
+
+    font-size:.85rem;
+
+    margin-bottom:16px;
+}
+
+.section-header h2{
+
+    font-family:"Boxing", serif;
+
+    font-size:clamp(2.5rem,5vw,4.5rem);
+
+    font-weight:400;
+
+    line-height:1.1;
+}
+
+.eyebrow{
+
+    display:inline-block;
+
+    color:var(--primary);
+
+    letter-spacing:2px;
+
+    font-size:.85rem;
+
+    margin-bottom:20px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn-primary{
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:16px 34px;
+
+    border-radius:999px;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+    border:none;
+
+    cursor:pointer;
+}
+
+.btn-primary:hover{
+
+    background:var(--primary-dark);
+
+    transform:translateY(-3px);
+}
+
+.btn-secondary{
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:16px 34px;
+
+    border-radius:999px;
+
+    border:1px solid rgba(255,255,255,.3);
+
+    color:white;
+
+    backdrop-filter:blur(12px);
+
+    transition:var(--transition);
+}
+
+.btn-secondary:hover{
+
+    transform:translateY(-3px);
+}
+
+/* =========================
+   CURSOR GLOW
+========================= */
+
+.cursor-glow{
+
+    position:fixed;
+
+    width:350px;
+    height:350px;
+
+    background:radial-gradient(
+        circle,
+        rgba(176,138,106,.15),
+        transparent 70%
+    );
+
+    pointer-events:none;
+
+    z-index:0;
+
+    border-radius:50%;
+
+    transform:translate(-50%, -50%);
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    z-index:1000;
+
+    transition:var(--transition);
+
+    padding:24px 0;
+}
+
+.navbar.scrolled{
+
+    background:rgba(255,255,255,.85);
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:var(--shadow-sm);
+}
+
+.nav-wrapper{
+
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+
+    font-family:"Boxing", serif;
+
+    font-size:1.8rem;
+
+    letter-spacing:4px;
+}
+
+.navbar ul{
+
+    display:flex;
+    gap:40px;
+}
+
+.navbar ul a{
+
+    position:relative;
+
+    font-size:.95rem;
+}
+
+.navbar ul a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:-8px;
+
+    width:0;
+    height:1px;
+
+    background:var(--text);
+
+    transition:.3s;
+}
+
+.navbar ul a:hover::after{
+
+    width:100%;
+}
+
+.btn-nav{
+
+    background:var(--text);
+
+    color:white;
+
+    padding:12px 24px;
+
+    border-radius:999px;
+
+    transition:var(--transition);
+}
+
+.btn-nav:hover{
+
+    transform:translateY(-3px);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+
+    position:relative;
+
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        rgba(248,245,241,.70),
+        rgba(248,245,241,.90)
+    ),
+    url("../images/hero-bg.jpg");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-overlay{
+
+    position:absolute;
+    inset:0;
+
+    background:
+    radial-gradient(
+        circle at center,
+        transparent,
+        rgba(248,245,241,.75)
+    );
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:950px;
+}
+
+.hero-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:10px 20px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.7);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,.5);
+
+    margin-bottom:30px;
+
+    font-size:.85rem;
+
+    letter-spacing:1px;
+
+    color:var(--primary);
+}
+
+.hero h1{
+
+    font-family:"Boxing", serif;
+
+    font-size:clamp(4rem,8vw,8rem);
+
+    font-weight:400;
+
+    line-height:.95;
+
+    margin-bottom:30px;
+}
+
+.hero h1 span{
+
+    display:block;
+
+    color:var(--primary);
+}
+
+.hero p{
+
+    max-width:760px;
+
+    margin:0 auto 40px;
+
+    color:var(--text-light);
+
+    font-size:1.15rem;
+}
+
+.hero-offer{
+
+    display:inline-block;
+
+    padding:24px 36px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.65);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.5);
+
+    box-shadow:var(--shadow-md);
+
+    margin-bottom:40px;
+}
+
+.hero-offer strong{
+
+    display:block;
+
+    font-size:2rem;
+
+    color:var(--primary);
+
+    margin-bottom:10px;
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:20px;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+}
+
+/* =========================
+   FLOATING BLOBS
+========================= */
+
+.floating-blob{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(60px);
+
+    opacity:.45;
+
+    animation:float 12s ease-in-out infinite;
+}
+
+.blob-1{
+
+    width:350px;
+    height:350px;
+
+    background:#e5d4c4;
+
+    top:10%;
+    left:-100px;
+}
+
+.blob-2{
+
+    width:400px;
+    height:400px;
+
+    background:#d9c1ab;
+
+    right:-120px;
+    bottom:10%;
+
+    animation-delay:2s;
+}
+
+/* =========================
+   FLOAT ANIMATION
+========================= */
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-40px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+/* ==================================================
+   LUMIÈRE AESTHETICS & MEDSPA
+   STYLE.CSS PART 2
+   BENEFITS + ABOUT + RESULTS + STATS + OFFER
+================================================== */
+
+/* =========================
+   BENEFITS SECTION
+========================= */
+
+.benefits{
+
+    position:relative;
+}
+
+.benefits-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:30px;
+}
+
+.benefit-card{
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.5);
+
+    border-radius:28px;
+
+    padding:40px 30px;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.benefit-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(255,255,255,.35),
+        transparent
+    );
+
+    opacity:0;
+
+    transition:.4s;
+}
+
+.benefit-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:var(--shadow-md);
+}
+
+.benefit-card:hover::before{
+
+    opacity:1;
+}
+
+.benefit-card .icon{
+
+    width:60px;
+    height:60px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:var(--surface-2);
+
+    color:var(--primary);
+
+    font-size:1.4rem;
+
+    margin-bottom:25px;
+}
+
+.benefit-card h3{
+
+    font-size:1.35rem;
+
+    margin-bottom:12px;
+
+    font-weight:600;
+}
+
+.benefit-card p{
+
+    color:var(--text-light);
+}
+
+/* =========================
+   ABOUT SECTION
+========================= */
+
+.about{
+
+    background:#fcfaf8;
+}
+
+.about-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:80px;
+
+    align-items:center;
+}
+
+.about-image{
+
+    position:relative;
+}
+
+.about-image img{
+
+    border-radius:36px;
+
+    box-shadow:var(--shadow-lg);
+
+    transition:.5s;
+}
+
+.about-image:hover img{
+
+    transform:scale(1.03);
+}
+
+.about-image::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    border-radius:50%;
+
+    background:rgba(176,138,106,.12);
+
+    filter:blur(30px);
+
+    right:-50px;
+    bottom:-40px;
+
+    z-index:-1;
+}
+
+.about-content h2{
+
+    font-family:"Boxing", serif;
+
+    font-size:clamp(2.5rem,5vw,4.2rem);
+
+    line-height:1.1;
+
+    margin-bottom:25px;
+}
+
+.about-content p{
+
+    color:var(--text-light);
+
+    margin-bottom:30px;
+}
+
+.about-content ul{
+
+    display:grid;
+
+    gap:18px;
+}
+
+.about-content li{
+
+    background:white;
+
+    border-radius:16px;
+
+    padding:16px 20px;
+
+    box-shadow:var(--shadow-sm);
+
+    border:1px solid rgba(0,0,0,.04);
+}
+
+/* =========================
+   RESULTS SECTION
+========================= */
+
+.results{
+
+    position:relative;
+}
+
+.gallery-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:30px;
+}
+
+.gallery-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:28px;
+
+    box-shadow:var(--shadow-md);
+
+    cursor:pointer;
+}
+
+.gallery-card img{
+
+    height:520px;
+
+    object-fit:cover;
+
+    transition:.8s ease;
+}
+
+.gallery-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        to top,
+        rgba(0,0,0,.35),
+        transparent 60%
+    );
+
+    z-index:1;
+
+    opacity:.8;
+
+    transition:.4s;
+}
+
+.gallery-card::after{
+
+    content:"Glow Result";
+
+    position:absolute;
+
+    left:25px;
+    bottom:25px;
+
+    color:white;
+
+    font-size:1rem;
+
+    letter-spacing:2px;
+
+    z-index:2;
+
+    opacity:0;
+
+    transform:translateY(20px);
+
+    transition:.4s;
+}
+
+.gallery-card:hover img{
+
+    transform:scale(1.08);
+}
+
+.gallery-card:hover::after{
+
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+.gallery-card:hover::before{
+
+    opacity:1;
+}
+
+/* =========================
+   STATS SECTION
+========================= */
+
+.stats{
+
+    padding:90px 0;
+
+    background:
+    linear-gradient(
+        135deg,
+        #efe7df,
+        #f8f5f1
+    );
+}
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:40px;
+}
+
+.stat-item{
+
+    text-align:center;
+}
+
+.stat-item h3{
+
+    font-family:"Boxing", serif;
+
+    font-size:clamp(3rem,6vw,5rem);
+
+    color:var(--primary);
+
+    line-height:1;
+}
+
+.stat-item p{
+
+    margin-top:12px;
+
+    color:var(--text-light);
+
+    letter-spacing:1px;
+}
+
+/* =========================
+   OFFER SECTION
+========================= */
+
+.offer{
+
+    position:relative;
+}
+
+.offer-card{
+
+    max-width:900px;
+
+    margin:auto;
+
+    text-align:center;
+
+    padding:80px 60px;
+
+    border-radius:40px;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(255,255,255,.92),
+        rgba(255,255,255,.75)
+    );
+
+    backdrop-filter:blur(22px);
+
+    border:1px solid rgba(255,255,255,.5);
+
+    box-shadow:var(--shadow-lg);
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.offer-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+    height:420px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(176,138,106,.18),
+        transparent
+    );
+
+    top:-180px;
+    left:-120px;
+}
+
+.offer-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:320px;
+    height:320px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(176,138,106,.12),
+        transparent
+    );
+
+    right:-120px;
+    bottom:-150px;
+}
+
+.offer-card span{
+
+    display:inline-block;
+
+    color:var(--primary);
+
+    letter-spacing:2px;
+
+    margin-bottom:18px;
+
+    position:relative;
+    z-index:2;
+}
+
+.offer-card h2{
+
+    font-family:"Boxing", serif;
+
+    font-size:clamp(2.8rem,5vw,5rem);
+
+    line-height:1.05;
+
+    margin-bottom:25px;
+
+    position:relative;
+    z-index:2;
+}
+
+.offer-card p{
+
+    max-width:650px;
+
+    margin:0 auto 35px;
+
+    color:var(--text-light);
+
+    position:relative;
+    z-index:2;
+}
+
+.offer-card .btn-primary{
+
+    position:relative;
+    z-index:2;
+}
+
+/* =========================
+   SECTION REVEAL
+========================= */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+    transition:
+    opacity .8s ease,
+    transform .8s ease;
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+/* ==================================================
+   LUMIÈRE AESTHETICS & MEDSPA
+   STYLE.CSS PART 3
+   TESTIMONIALS + BOOKING + FAQ + FOOTER
+   RESPONSIVE + LUXURY EFFECTS
+================================================== */
+
+/* =========================
+   TESTIMONIALS
+========================= */
+
+.testimonials{
+    background:#fcfaf8;
+}
+
+.testimonial-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.testimonial-card{
+    background:white;
+    padding:40px;
+    border-radius:28px;
+    box-shadow:var(--shadow-sm);
+    transition:var(--transition);
+    border:1px solid rgba(0,0,0,.04);
+}
+
+.testimonial-card:hover{
+    transform:translateY(-10px);
+    box-shadow:var(--shadow-md);
+}
+
+.stars{
+    color:var(--primary);
+    font-size:1.2rem;
+    margin-bottom:20px;
+}
+
+.testimonial-card p{
+    color:var(--text-light);
+    margin-bottom:20px;
+}
+
+.testimonial-card strong{
+    font-weight:600;
+}
+
+/* =========================
+   BOOKING SECTION
+========================= */
+
+.booking{
+    position:relative;
+}
+
+.booking-card{
+
+    max-width:900px;
+    margin:auto;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(255,255,255,.95),
+        rgba(255,255,255,.75)
+    );
+
+    backdrop-filter:blur(20px);
+
+    border-radius:36px;
+
+    padding:70px;
+
+    box-shadow:var(--shadow-lg);
+
+    border:1px solid rgba(255,255,255,.6);
+}
+
+.booking-heading{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.booking-heading span{
+
+    display:inline-block;
+
+    color:var(--primary);
+
+    letter-spacing:2px;
+
+    margin-bottom:15px;
+}
+
+.booking-heading h2{
+
+    font-family:"Boxing", serif;
+
+    font-size:clamp(2.5rem,5vw,4rem);
+
+    margin-bottom:15px;
+}
+
+.booking-heading p{
+    color:var(--text-light);
+}
+
+.form-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:25px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.form-group label{
+
+    margin-bottom:10px;
+
+    font-size:.9rem;
+
+    color:var(--text-light);
+}
+
+.form-group input,
+.form-group select{
+
+    height:60px;
+
+    border:none;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:0 20px;
+
+    font-size:1rem;
+
+    box-shadow:
+    inset 0 0 0 1px rgba(0,0,0,.06);
+
+    transition:.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus{
+
+    outline:none;
+
+    box-shadow:
+    inset 0 0 0 2px var(--primary);
+}
+
+.full-width{
+    grid-column:span 2;
+}
+
+.submit-btn{
+
+    width:100%;
+
+    margin-top:25px;
+
+    height:65px;
+
+    font-size:1rem;
+}
+
+#formMessage{
+
+    margin-top:20px;
+
+    text-align:center;
+
+    font-weight:600;
+}
+
+/* =========================
+   FAQ
+========================= */
+
+.faq{
+    background:#fcfaf8;
+}
+
+.faq-list{
+
+    max-width:850px;
+
+    margin:auto;
+}
+
+.faq-item{
+
+    background:white;
+
+    border-radius:20px;
+
+    margin-bottom:20px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow-sm);
+}
+
+.faq-question{
+
+    width:100%;
+
+    background:none;
+
+    border:none;
+
+    text-align:left;
+
+    padding:24px 28px;
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    color:var(--text);
+}
+
+.faq-answer{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:max-height .4s ease;
+
+    color:var(--text-light);
+
+    padding:0 28px;
+}
+
+.faq-item.active .faq-answer{
+
+    max-height:200px;
+
+    padding:
+    0 28px 24px;
+}
+
+/* =========================
+   FINAL CTA
+========================= */
+
+.final-cta{
+
+    padding:140px 0;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        #efe7df,
+        #f8f5f1
+    );
+}
+
+.final-cta h2{
+
+    font-family:"Boxing", serif;
+
+    font-size:clamp(3rem,6vw,6rem);
+
+    margin-bottom:20px;
+}
+
+.final-cta p{
+
+    color:var(--text-light);
+
+    margin-bottom:35px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    background:#1f1f1f;
+
+    color:white;
+
+    text-align:center;
+
+    padding:70px 0;
+}
+
+.footer-logo{
+
+    font-family:"Boxing", serif;
+
+    letter-spacing:5px;
+
+    font-size:2rem;
+
+    margin-bottom:20px;
+}
+
+footer p{
+
+    opacity:.75;
+
+    margin-bottom:10px;
+}
+
+footer small{
+
+    opacity:.5;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#f5f5f5;
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:999px;
+}
+
+/* =========================
+   IMAGE SHIMMER
+========================= */
+
+.gallery-card{
+
+    position:relative;
+}
+
+.gallery-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-120%;
+
+    width:60%;
+    height:100%;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.35),
+        transparent
+    );
+
+    z-index:3;
+
+    transition:.8s;
+}
+
+.gallery-card:hover::before{
+    left:150%;
+}
+
+/* =========================
+   FLOATING GLASS EFFECT
+========================= */
+
+.booking-card,
+.offer-card,
+.benefit-card{
+
+    animation:
+    subtleFloat 8s ease-in-out infinite;
+}
+
+@keyframes subtleFloat{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+/* =========================
+   FADE IN
+========================= */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(50px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+    }
+}
+
+/* =========================
+   MOBILE MENU PREP
+========================= */
+
+.mobile-toggle{
+    display:none;
+}
+
+/* =========================
+   LARGE TABLET
+========================= */
+
+@media (max-width: 1024px){
+
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .testimonial-grid{
+        grid-template-columns:1fr;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr;
+        gap:60px;
+    }
+
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px){
+
+    .navbar nav{
+        display:none;
+    }
+
+    .btn-nav{
+        display:none;
+    }
+
+    .section{
+        padding:90px 0;
+    }
+
+    .hero h1{
+        font-size:4rem;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .full-width{
+        grid-column:span 1;
+    }
+
+    .booking-card{
+        padding:40px 25px;
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 576px){
+
+    .hero{
+        min-height:90vh;
+    }
+
+    .hero h1{
+        font-size:3.2rem;
+    }
+
+    .hero-offer{
+        padding:20px;
+    }
+
+    .section-header h2{
+        font-size:2.4rem;
+    }
+
+    .booking-heading h2{
+        font-size:2.3rem;
+    }
+
+    .offer-card{
+        padding:50px 25px;
+    }
+
+    .offer-card h2{
+        font-size:2.5rem;
+    }
+
+    .testimonial-card{
+        padding:25px;
+    }
+
+    .faq-question{
+        font-size:.95rem;
+    }
+
+}
+
+/* =========================
+   EXTRA SMALL DEVICES
+========================= */
+
+@media (max-width: 400px){
+
+    .hero h1{
+        font-size:2.7rem;
+    }
+
+    .btn-primary,
+    .btn-secondary{
+
+        width:100%;
+    }
+
+}
