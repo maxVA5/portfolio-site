@@ -1,4 +1,4 @@
-# Nico Alvarez Portfolio — Mixed Media Design System
+# Max Potenciano Portfolio — Virtual Assistant | Web Designer
 
 A two-page portfolio site (cover/about/skills/projects/contact + a companion style guide),
 built in plain HTML, CSS, and a single line of JS. No build step, no framework, no npm install.
