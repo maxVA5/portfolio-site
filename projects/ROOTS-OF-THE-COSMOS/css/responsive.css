@@ -1,0 +1,354 @@
+/* =========================================================
+   ROOTS OF THE COSMOS
+   RESPONSIVE
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   TABLET
+   --------------------------------------------------------- */
+
+@media (max-width: 1000px) {
+
+    .site-nav {
+        gap: 1rem;
+    }
+
+
+    .hero__bottom {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .hero__bottom .cosmos-button {
+        grid-column: 1 / -1;
+
+        justify-self: start;
+    }
+
+
+    .journey__content {
+        grid-template-columns: 1fr;
+
+        gap: 3rem;
+    }
+
+
+    .journey__origin {
+        justify-content: flex-start;
+    }
+
+
+    .philosophy__copy {
+        margin-left: 0;
+    }
+
+
+    .experience__statements {
+        margin-left: 0;
+    }
+
+
+    .experience__final {
+        margin-left: 0;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+    :root {
+        --space-xxl: 7rem;
+    }
+
+
+    .site-header {
+        padding: 1rem 0;
+    }
+
+
+    .site-logo__name {
+        max-width: 150px;
+
+        line-height: 1.2;
+    }
+
+
+    .site-nav {
+        position: fixed;
+
+        inset: 0;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+        justify-content: center;
+
+        gap: 2rem;
+
+        padding: 2rem;
+
+        background: var(--cosmos-void);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transform: translateY(-20px);
+
+        transition:
+            opacity 0.4s ease,
+            visibility 0.4s ease,
+            transform 0.4s ease;
+    }
+
+
+    .site-nav.is-open {
+        opacity: 1;
+
+        visibility: visible;
+
+        transform: translateY(0);
+    }
+
+
+    .site-nav a {
+        font-size: 0.8rem;
+    }
+
+
+    .menu-toggle {
+        position: relative;
+
+        z-index: 110;
+
+        display: flex;
+    }
+
+
+    .hero {
+        min-height: 100svh;
+    }
+
+
+    .hero__content {
+        padding-top: 7rem;
+    }
+
+
+    .hero__title {
+        font-size: clamp(
+            4.5rem,
+            19vw,
+            8rem
+        );
+    }
+
+
+    .hero__title span:nth-child(2) {
+        padding-left: 5vw;
+    }
+
+
+    .hero__bottom {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 1.5rem;
+
+        margin-top: 4rem;
+    }
+
+
+    .hero__description {
+        max-width: 320px;
+    }
+
+
+    .hero__scroll-indicator {
+        display: none;
+    }
+
+
+    .section {
+        padding: 7rem 0;
+    }
+
+
+    .journey {
+        min-height: auto;
+    }
+
+
+    .philosophy {
+        min-height: auto;
+    }
+
+
+    .philosophy__statement h3 {
+        margin-left: 8vw;
+    }
+
+
+    .philosophy__copy {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 2rem;
+
+        margin-top: 5rem;
+    }
+
+
+    .philosophy__origin {
+        grid-template-columns: 1fr;
+
+        margin-top: 5rem;
+    }
+
+
+    .philosophy__node {
+        min-height: 160px;
+
+        border-right: 0;
+
+        border-bottom: 1px solid
+            rgba(233, 237, 245, 0.15);
+    }
+
+
+    .philosophy__node:last-child {
+        border-bottom: 0;
+    }
+
+
+    .discover {
+        min-height: auto;
+    }
+
+
+    .discover__constellation {
+        width: 90vw;
+
+        margin-top: 5rem;
+    }
+
+
+    .constellation-center {
+        width: 120px;
+        height: 120px;
+    }
+
+
+    .constellation-center strong {
+        font-size: 1.2rem;
+    }
+
+
+    .constellation-node {
+        width: 80px;
+        height: 80px;
+
+        font-size: 0.38rem;
+    }
+
+
+    .experience {
+        min-height: auto;
+    }
+
+
+    .experience__statements {
+        margin-top: 5rem;
+    }
+
+
+    .experience__statements p {
+        font-size: clamp(
+            2rem,
+            10vw,
+            3.5rem
+        );
+    }
+
+
+    .experience__statements p:nth-child(2),
+    .experience__statements p:nth-child(3),
+    .experience__statements p:nth-child(4) {
+        margin-left: 0;
+    }
+
+
+    .experience__final {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        margin-top: 5rem;
+    }
+
+
+    .final-cta {
+        min-height: 75vh;
+    }
+
+
+    .site-footer__inner {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   SMALL MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 400px) {
+
+    .hero__title {
+        font-size: 4rem;
+    }
+
+
+    .constellation-node {
+        width: 65px;
+        height: 65px;
+
+        font-size: 0.32rem;
+    }
+
+
+    .node--culture {
+        left: 15%;
+    }
+
+
+    .node--music {
+        right: 15%;
+    }
+
+
+    .node--creation {
+        left: 15%;
+    }
+
+
+    .node--technology {
+        right: 15%;
+    }
+
+}
